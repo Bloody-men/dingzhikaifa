@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>省邮储我和我的祖国</title>
+	<!--分享描述：一见初新 等你开启--->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+	<style type="text/css">
+		*{margin:0;padding: 0;}
+		.bg{
+			position: relative;
+			max-width: 500px;
+			height: 100vh;
+			margin: 0 auto;
+			background: url(https://ae01.alicdn.com/kf/Ha3cc7ab6757d4d0d889f378f5adc8645c.jpg) no-repeat;
+			background-size: 100% 100%;
+			text-align: center;
+		}
+		footer{margin-top: -36px; text-align: center;}
+		footer>a{font-size:12px;color:#fff;text-decoration: none;}
+/*音乐旋转动画*/
+.rotate{position: absolute; top: 10px; left: 10px; width: 30px; height: 30px; background-size: 100%; background-image: url(https://pic.superbed.cn/item/5d557047451253d17892dbb9.png); animation: music 2s linear infinite;}@-webkit-keyframes music{0%{transform: rotate(0deg);}100%{transform: rotate(360deg);}}@-moz-keyframes music{0%{transform: rotate(0deg);}100%{transform: rotate(360deg);}}@-o-keyframes music{0%{transform: rotate(0deg);}100%{transform: rotate(360deg);}}
+#audio-btn{position: absolute; left: 0px;top: 20px; z-index: 200; width: 50px; height: 50px;}
+.off{background: url(https://pic.superbed.cn/item/5d557047451253d17892dbb9.png) no-repeat center/30px;}
+.on{background: url(https://pic.superbed.cn/item/5d557033451253d17892da73.gif) no-repeat center/60px;}
+
+
+	</style>
+</head>
+
+<body>
+<div class="bg">
+	<div id="audio-btn" class="on">
+		<div class="rotate"></div>
+		<audio src="http://www.ytmp3.cn/down/50485.mp3" autoplay="" loop="" preload="" id="music"></audio>
+	</div>
+	<div style="margin: auto; padding-top: 72vh;"><a style="padding: 10px 50px; border-radius: 20px; text-decoration: none; background: #fae78b; color: #70100a;" href="./index2.html">进入下一页</a></div>
+	<!--<a href="http://ua5xs71n.hdk.hitoupiao.wang/">
+		<img style="width: 72%;margin-top: 2vh" src="https://ae01.alicdn.com/kf/H4b3318de366546d38ca118ba9d824eabe.png">
+	</a>-->
+</div>
+<!--<footer><a href="https://www.hdk.net">- 技术支持：互动酷 -</a></footer>-->
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	//index页面 音乐点击旋转
+    var $audioBtn = $('#audio-btn');
+      $audioBtn.on('click', function () {
+          var audio = document.getElementById('music');
+          if (audio.paused) {
+              audio.play();
+              $audioBtn.removeClass('off').addClass('on').find('div').addClass('rotate');
+          } else {
+              audio.pause();
+              $audioBtn.removeClass('on').addClass('off').find('div').removeClass('rotate');
+          }
+      });
+</script>
+</html>
